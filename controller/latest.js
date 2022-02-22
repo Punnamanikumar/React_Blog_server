@@ -26,7 +26,7 @@ const get = (req, res) => {
     {
       id: "11",
       category: "Jobs",
-      type: "Latest1",
+      type: "Latest",
       img: "https://images.news18.com/telugu/uploads/2022/01/HAL-Jobs-16416411333x2.jpg?impolicy=website&width=509&height=339",
       det: "Jobs in Hyderabad: Apprentice jobs in Hyderabad .. Qualifications, application process",
       date: "Published by: Sharath Chandra January 08, 2022, 17:04 IST",
@@ -34,10 +34,10 @@ const get = (req, res) => {
         "Hindustan Aeronautics Limited has issued a notification for the replacement of multiple posts in Hyderabad . Through this notification , Technician Apprentice Trainee and Graduate Apprentice Trainee jobs will be filled. The notification details for this post need to be downloaded after registering on the official website. Without any examination .. HAL will replace these posts on academic merit basis only, reservation. Selected candidates will be given a stipend of Rs. 8,000 to Rs. 9,000 depending on the post. Application ProcessIs completely online. The application process will run from January 7, 2022 to January 17, 2022. For notification and application process, one has to visit the official website https://portal.mhrdnats .gov.in/ Selection Procedure ..- Selection process will be done on the basis of notification only. - Applications will be accepted from candidates in a timely manner. - Applicants will be shortlisted on the basis of academic merit and reservation. - The final selection will be made after reviewing the credentials. - Action will be taken against those who submit false credentials. Application Procedure ..  Step 1: Candidates should first open the website  Step 2: Click on Register here on the home page.  Step 3: Candidates should complete the registration with their details. AIIMS Jobs: 118 jobs in AIIMS .. Salary above Rs.  Step 4: Wait a day for enrollment verification and approval.  Step 5: After completing the verification and approval, re- open the website  Step 6: Click on Login and login with details  Step 7: Then click on the Establishment Request menu.  Step 8: Click on Find Establishment. Step 9: Type Hindustan Aeronautics Limited Apprentice and search. Step 10: Then click on the Apply button and apply. Step 11: In addition, the format of the application form is placed in the notification. Step 12: The deadline to apply is January 17, 2022.",
     },
   ];
-  if (req.params.category) {
+  if (req.query.type) {
     const newLatest = latest.filter(
       (val) =>
-        val.type.toLocaleLowerCase() === req.params.type.toLocaleLowerCase()
+        val.type.toLocaleLowerCase() == req.query.type.toLocaleLowerCase()
     );
     res.send(newLatest);
   } else {
