@@ -6,6 +6,6 @@ categoryRouter = express.Router();
 
 categoryRouter.route("/blog").get(categoryController.categoryGet);
 categoryRouter.route("/blog/:category").get(categoryController.categoryGet);
-categoryRouter.route("/latest").get(latestController.latestGet);
+categoryRouter.route("/view/latest").get(latestController.latestGet);
 
 module.exports = categoryRouter;
