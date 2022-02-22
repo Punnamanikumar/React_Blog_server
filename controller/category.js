@@ -3,7 +3,6 @@ const get = (req, res) => {
   const category = [
     {
       id: "1",
-      latest: "Latest",
       category: "TollyWood",
       img: "https://static-koimoi.akamaized.net/wp-content/new-galleries/2022/01/overcoming-the-odds-tollywood-eyes-2022-with-relish-001.jpg",
       det: "Radhe Shyam, Pushpa 2 & Other Biggies To Take Tollywood A Step Higher In 2022",
@@ -13,8 +12,6 @@ const get = (req, res) => {
     },
     {
       id: "2",
-      latest: "Latest",
-      idd: "54",
       category: "TollyWood",
       img: "https://static-koimoi.akamaized.net/wp-content/new-galleries/2022/01/pushpa-to-cross-250-crore-mark-today-001.jpg",
       det: "Pushpa Box Office Day 23 (Early Trends): Picks Up Terrifically On 4th Saturday",
@@ -160,13 +157,6 @@ const get = (req, res) => {
   } else if (req.query.id) {
     const newCategory = category.filter((val) => val.id == req.query.id);
     res.send(newCategory);
-  } else if (req.query.latest) {
-    const newCategory = category.filter(
-      (val) =>
-        val.latest.toLocaleLowerCase() === req.query.latest.toLocaleLowerCase()
-    );
-    res.send(newCategory);
-    console.log("type");
   } else {
     res.send(category);
   }
