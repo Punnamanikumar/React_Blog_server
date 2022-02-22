@@ -153,9 +153,7 @@ const get = (req, res) => {
         req.params.category.toLocaleLowerCase()
     );
     res.send(newCategory);
-  } else if (req.params.id) {
-    const newCategory = category.filter((val) => val.id == req.params.id);
-    res.send(newCategory);
+    // console.log("Category");
   } else if (req.query.id) {
     const newCategory = category.filter((val) => val.id == req.query.id);
     res.send(newCategory);
